@@ -28,3 +28,10 @@ net.peerCount
 
 eth.syncing
 
+## Create Account
+
+geth --datadir=$HOME/.ethereum/rinkeby account new
+
+then in console: eth.accounts
+
+
