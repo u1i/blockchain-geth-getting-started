@@ -38,6 +38,10 @@ alternatively:
 
 personal.newAccount("somepassword")
 
+## Ask for Money
+
+https://www.rinkeby.io/#faucet
+
 ## Check Balance
 eth.coinbase
 
@@ -48,6 +52,8 @@ eth.getBalance(eth.coinbase)
 
 
 ![](https://raw.githubusercontent.com/u1i/blockchain-geth-getting-started/master/screen.png)
+
+![](https://raw.githubusercontent.com/u1i/blockchain-geth-getting-started/master/funded.png)
 
 
 
