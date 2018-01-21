@@ -47,3 +47,4 @@ eth.getBalance(eth.coinbase)
 
 
 
+![](https://raw.githubusercontent.com/u1i/blockchain-geth-getting-started/master/screen.png)
