@@ -34,4 +34,16 @@ geth --datadir=$HOME/.ethereum/rinkeby account new
 
 then in console: eth.accounts
 
+alternatively:
+
+personal.newAccount("somepassword")
+
+## Check Balance
+eth.coinbase
+
+eth.getBalance(eth.coinbase)
+
+
+
+
 
