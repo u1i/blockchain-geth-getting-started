@@ -48,7 +48,22 @@ eth.coinbase
 eth.getBalance(eth.coinbase)
 
 
+## Look up transactions for account
 
+https://rinkeby.etherscan.io/address/0xecd2e6a46e3ddd19674581c0464df335fe474c3e
+
+## Transfer ETH
+
+
+from = eth.accounts[0];
+
+to   = eth.accounts[1];
+
+amount = 1 
+
+personal.unlockAccount(from, "mypassword", 300)
+
+eth.sendTransaction({from: from, to: to, value: amount})
 
 
 ![](https://raw.githubusercontent.com/u1i/blockchain-geth-getting-started/master/screen.png)
