@@ -1,75 +1,80 @@
-# blockchain-geth-getting-started
+# Getting Started with Blockchain - Ethereum
 
-## Install on Ubuntu
+Tools and platforms are constantly evolving and documentation is easily outdated. This is how you get started with Ethereum / geth on Ubuntu as of January 2018.
 
-sudo apt-get install software-properties-common
+## Install geth command line client on Ubuntu
 
-sudo add-apt-repository -y ppa:ethereum/ethereum
+`sudo apt-get install software-properties-common`
 
-sudo apt-get update
+`sudo add-apt-repository -y ppa:ethereum/ethereum`
 
-sudo apt-get install ethereum
+`sudo apt-get update`
 
-## Connect to test network
+`sudo apt-get install ethereum
+`
+## Connect to Rinkeby test network
 
-### Sync the chain
+### This will sync the chain - and take some time
 
-geth --rinkeby
+`geth --rinkeby`
 
-### Open Console (while the other thing is running)
+### Open Console in a separate (screen) window and keep the other command running
 
-geth --datadir=$HOME/.ethereum/rinkeby   attach ipc:$HOME/.ethereum/rinkeby/geth.ipc console
+`geth --datadir=$HOME/.ethereum/rinkeby   attach ipc:$HOME/.ethereum/rinkeby/geth.ipc console`
 
-## Test Connectivity and sync status on the console
+Once the console is open, you should have meaningful output from these commands to find out if the syncing is running and/or completed yet:
 
-net.listening
+`net.listening`
 
-net.peerCount
+`net.peerCount`
 
-eth.syncing
+`eth.syncing`
 
-## Create Account
+## You need an Account - let's create one
 
-geth --datadir=$HOME/.ethereum/rinkeby account new
+`geth --datadir=$HOME/.ethereum/rinkeby account new`
 
-then in console: eth.accounts
+then in console type: `eth.accounts` - take note of your account identifier
 
-alternatively:
+alternatively create the account in the console:
 
-personal.newAccount("somepassword")
+`personal.newAccount("somepassword")`
 
-## Ask for Money
+## Ask for 'Free' Money
 
-https://www.rinkeby.io/#faucet
+https://www.rinkeby.io/#faucet - takes seconds only!
 
 ## Check Balance
-eth.coinbase
 
-eth.getBalance(eth.coinbase)
+`eth.coinbase`
+
+`eth.getBalance(eth.coinbase)`
 
 
-## Look up transactions for account
+## Look up transactions for account (this is my test account)
 
 https://rinkeby.etherscan.io/address/0xecd2e6a46e3ddd19674581c0464df335fe474c3e
 
 ## Transfer ETH
 
+create a second account first
 
-from = eth.accounts[0];
+`from = eth.accounts[0];`
 
-to   = eth.accounts[1];
+`to   = eth.accounts[1];`
 
-amount = 1 
+`amount = 1 `
 
-personal.unlockAccount(from, "mypassword", 300)
+`personal.unlockAccount(from, "mypassword", 300)`
 
-eth.sendTransaction({from: from, to: to, value: amount})
+`eth.sendTransaction({from: from, to: to, value: amount})`
 
 
 ![](https://raw.githubusercontent.com/u1i/blockchain-geth-getting-started/master/screen.png)
 
 ![](https://raw.githubusercontent.com/u1i/blockchain-geth-getting-started/master/funded.png)
 
+What's next? Storing data - or 'contracts'. [This is where it gets tricky](https://medium.com/@ConsenSys/a-101-noob-intro-to-programming-smart-contracts-on-ethereum-695d15c1dab4).
 
-
-https://gist.github.com/cryptogoth/10a98e8078cfd69f7ca892ddbdcf26bc
+--
+Thanks to [cryptogoth](https://gist.github.com/cryptogoth/10a98e8078cfd69f7ca892ddbdcf26bc)
